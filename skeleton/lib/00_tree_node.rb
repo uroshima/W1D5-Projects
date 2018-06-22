@@ -33,13 +33,14 @@ class PolyTreeNode
   end
   
   def bfs(target_value)
-    return self if self.value == target_value
+    # return self if self.value == target_value
     checked_nodes = [self]
     
     until checked_nodes.empty?
-      debugger
+      # debugger
       child = checked_nodes.shift
       return child if child.value == target_value
+      # next if child.children.empty?
       child.children.each do |kid|
         checked_nodes << kid
       end
